@@ -96,6 +96,12 @@ function applyLanguage(lang) {
     if (val !== null) el.placeholder = val;
   });
 
+  // Update localized aria-labels (e.g. hamburger menu)
+  document.querySelectorAll('[data-aria-label-he]').forEach(el => {
+    const val = el.getAttribute('data-aria-label-' + lang);
+    if (val !== null) el.setAttribute('aria-label', val);
+  });
+
   // Show CURRENT language code on the toggle button
   document.querySelectorAll('[data-cur-lang]').forEach(el => {
     el.textContent = LANG_LABELS[lang];
