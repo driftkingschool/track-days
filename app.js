@@ -17,9 +17,6 @@ const STORAGE_KEY = 'dks-trackdays-lang';
 const I18N_BREAKDOWN = {
   carRegular: { he: 'רכב רגיל', en: 'Standard car', ru: 'Обычный авто', ar: 'سيارة عادية' },
   carHighHP:  { he: 'רכב דריפט 300+ כ"ס', en: 'Drift car 300+ HP', ru: 'Дрифт-кар 300+ л.с.', ar: 'سيارة دريفت +300 حصان' },
-  carMazda:   { he: 'מאזדה מיאטה (רכב של DKS)', en: 'Mazda Miata (DKS car)', ru: 'Mazda Miata (машина DKS)', ar: 'مازدا مياتا (سيارة DKS)' },
-  carPorsche: { he: 'פורש 718-S (רכב של DKS)', en: 'Porsche 718-S (DKS car)', ru: 'Porsche 718-S (машина DKS)', ar: 'بورش 718-S (سيارة DKS)' },
-  carM3:      { he: 'ב.מ.וו M3 COMPETITION (רכב של DKS)', en: 'BMW M3 COMPETITION (DKS car)', ru: 'BMW M3 COMPETITION (машина DKS)', ar: 'بي إم دبليو M3 COMPETITION (سيارة DKS)' },
   addDriver:  { he: 'נהג נוסף', en: 'Additional driver', ru: 'Доп. водитель', ar: 'سائق إضافي' },
   helmet1:    { he: 'השכרת קסדה לנהג ראשי', en: 'Helmet rental (primary)', ru: 'Аренда шлема (осн.)', ar: 'استئجار خوذة (رئيسي)' },
   helmet2:    { he: 'השכרת קסדה לנהג נוסף', en: 'Helmet rental (additional)', ru: 'Аренда шлема (доп.)', ar: 'استئجار خوذة (إضافي)' }
@@ -185,15 +182,47 @@ const CONFIG = {
   appsScriptUrl: 'https://script.google.com/macros/s/AKfycbyX80BdKV6fdp7ylZwmIKVSQOGWLQugqnoEs57EiViBZNdN5zI0U08qsVyo1iebB6N7ow/exec',
 
   pricing: {
-    base: { regular: 400, highHP: 500, mazda: 900, porsche: 1300, m3: 2600 },
+    // Track days are private customer cars only (Paul, 03/08/26) , no DKS car rentals here.
+    base: { regular: 400, highHP: 500 },
     addons: { additionalDriver: 250, helmetRental: 50 },
     deposit: 50
   },
 
-  // Pre-validated matrix removed: with 5 car classes + 4 add-on combinations the matrix is large
-  // and the CardCom proxy now creates LPs dynamically per-customer (any amount).
+  // Pre-validated matrix removed: the CardCom proxy creates LPs dynamically per-customer (any amount).
   validMatrixPrices: null
 };
+
+/* ====== AUTO-HIDE PAST DATES ======
+   Cards carry data-date, form options carry the date as the value prefix.
+   Anything before today disappears on load, so past dates never stay bookable
+   even if the HTML isn't cleaned manually. Counters update to match. */
+(function hidePastDates() {
+  const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD, string compare works
+  document.querySelectorAll('.date-card[data-date]').forEach(card => {
+    if (card.dataset.date < today) card.remove();
+  });
+  document.querySelectorAll('.dates-month').forEach(month => {
+    if (!month.querySelector('.date-card')) month.remove();
+  });
+  document.querySelectorAll('select[name="eventDate"] option[value]').forEach(opt => {
+    const d = opt.value.split('|')[0];
+    if (d && d < today) opt.remove();
+  });
+  // Sync the two counters with what actually remains
+  const left = document.querySelectorAll('.date-card[data-date]').length;
+  const stat = document.getElementById('stat-days-left');
+  if (stat) stat.textContent = String(left);
+  // Replace the LAST number (the date count) - the first number is the year "2026"
+  const eyebrow = document.getElementById('dates-eyebrow');
+  const countRe = /\d+(?!.*\d)/;
+  if (eyebrow) {
+    LANG_CYCLE.forEach(l => {
+      const v = eyebrow.getAttribute('data-' + l);
+      if (v) eyebrow.setAttribute('data-' + l, v.replace(countRe, String(left)));
+    });
+    eyebrow.textContent = eyebrow.textContent.replace(countRe, String(left));
+  }
+})();
 
 /* ====== DOM REFERENCES ====== */
 const form = document.getElementById('registration-form');
@@ -296,10 +325,7 @@ function collectFormData() {
 
 const CAR_LABEL_KEY = {
   regular: 'carRegular',
-  highHP:  'carHighHP',
-  mazda:   'carMazda',
-  porsche: 'carPorsche',
-  m3:      'carM3'
+  highHP:  'carHighHP'
 };
 
 function calculatePrice(d) {

@@ -93,11 +93,11 @@
   <div class="hero-content">
     <span class="hero-eyebrow" data-he="קיץ 2026 . מוטור סיטי, באר שבע" data-en="Summer 2026 . Motor City, Be'er Sheva" data-ru="Лето 2026 . Motor City, Беэр-Шева" data-ar="صيف 2026 . موتور سيتي, بئر السبع">קיץ 2026 . מוטור סיטי, באר שבע</span>
     <h1 class="hero-title" data-he='כל יום חמישי במסלול.<br><span class="accent">שמור לקהילת DKS.</span>' data-en='Every Thursday on track.<br><span class="accent">Reserved for the DKS community.</span>' data-ru='Каждый четверг на трассе.<br><span class="accent">Только для сообщества DKS.</span>' data-ar='كل خميس في المضمار.<br><span class="accent">محجوز لمجتمع DKS.</span>'>כל יום חמישי במסלול.<br><span class="accent">שמור לקהילת DKS.</span></h1>
-    <p class="hero-sub" data-he="המסלול נסגר בעבורנו בכל יום חמישי, לאורך הקיץ. רכב שלך או רכב של DKS לבחירה. הצטרף כנהג ראשי או כמלווה. אווירה רצינית, נהגים מוכרים, אספלט תקני." data-en="The track closes for us every Thursday, all summer. Your own car or a DKS car , your choice. Join as primary driver or co-driver. Serious atmosphere, vetted drivers, certified asphalt." data-ru="Трасса закрывается для нас каждый четверг, всё лето. Ваша машина или машина DKS , на выбор. Присоединяйтесь как основной или второй водитель. Серьёзная атмосфера, проверенные водители, сертифицированный асфальт." data-ar="المضمار يُغلق لنا كل خميس، طوال الصيف. سيارتك أو سيارة DKS , حسب اختيارك. انضم كسائق رئيسي أو مرافق. أجواء جدية، سائقون معروفون، إسفلت معتمد.">המסלול נסגר בעבורנו בכל יום חמישי, לאורך הקיץ. רכב שלך או רכב של DKS לבחירה. הצטרף כנהג ראשי או כמלווה. אווירה רצינית, נהגים מוכרים, אספלט תקני.</p>
+    <p class="hero-sub" data-he="המסלול נסגר בעבורנו בכל יום חמישי, לאורך הקיץ. מגיעים עם הרכב הפרטי שלך. הצטרף כנהג ראשי או כמלווה. אווירה רצינית, נהגים מוכרים, אספלט תקני." data-en="The track closes for us every Thursday, all summer. Bring your own car. Join as primary driver or co-driver. Serious atmosphere, vetted drivers, certified asphalt." data-ru="Трасса закрывается для нас каждый четверг, всё лето. Приезжайте на своей машине. Присоединяйтесь как основной или второй водитель. Серьёзная атмосфера, проверенные водители, сертифицированный асфальт." data-ar="المضمار يُغلق لنا كل خميس، طوال الصيف. تأتي بسيارتك الخاصة. انضم كسائق رئيسي أو مرافق. أجواء جدية، سائقون معروفون، إسفلت معتمد.">המסלול נסגר בעבורנו בכל יום חמישי, לאורך הקיץ. מגיעים עם הרכב הפרטי שלך. הצטרף כנהג ראשי או כמלווה. אווירה רצינית, נהגים מוכרים, אספלט תקני.</p>
 
     <div class="hero-stats">
       <div>
-        <div class="hero-stat-num">7</div>
+        <div class="hero-stat-num" id="stat-days-left">5</div>
         <div class="hero-stat-label" data-he="ימי מסלול עד ספטמבר" data-en="track days through September" data-ru="трек-дней до сентября" data-ar="يوم مضمار حتى سبتمبر">ימי מסלול עד ספטמבר</div>
       </div>
       <div>
@@ -145,7 +145,7 @@
 <!-- ============ AVAILABLE DATES ============ -->
 <section id="dates" class="section section-alt">
   <div class="container">
-    <span class="section-eyebrow" data-he="אוגוסט-ספטמבר 2026 . 7 תאריכים" data-en="August-September 2026 . 7 dates" data-ru="Август-Сентябрь 2026 . 7 дат" data-ar="أغسطس-سبتمبر 2026 . 7 تواريخ">אוגוסט-ספטמבר 2026 . 7 תאריכים</span>
+    <span class="section-eyebrow" id="dates-eyebrow" data-he="קיץ 2026 . 5 תאריכים" data-en="Summer 2026 . 5 dates" data-ru="Лето 2026 . 5 дат" data-ar="صيف 2026 . 5 تواريخ">קיץ 2026 . 5 תאריכים</span>
     <h2 class="section-title" data-he="בחר את היום שלך במסלול." data-en="Pick your day on the track." data-ru="Выберите свой день на трассе." data-ar="اختر يومك في المضمار.">בחר את היום שלך במסלול.</h2>
     <p class="section-sub" data-he="כל תאריך מוגבל במקומות. ההרשמה דרך הטופס למטה בלבד." data-en="Each date is capacity-limited. Registration via the form below only." data-ru="Места ограничены на каждой дате. Регистрация только через форму ниже." data-ar="عدد المقاعد محدود لكل تاريخ. التسجيل عبر النموذج أدناه فقط.">כל תאריך מוגבל במקומות. ההרשמה דרך הטופס למטה בלבד.</p>
 
@@ -153,21 +153,7 @@
       <div class="dates-month">
         <h3 class="month-label" data-he="אוגוסט 2026" data-en="August 2026" data-ru="Август 2026" data-ar="أغسطس 2026">אוגוסט 2026</h3>
         <div class="dates-grid">
-          <article class="date-card reveal">
-            <div class="date-day">06</div>
-            <div class="date-month" data-he="אוגוסט 2026" data-en="August 2026" data-ru="Август 2026" data-ar="أغسطس 2026">אוגוסט 2026</div>
-            <div class="date-meta" data-he="חמישי" data-en="Thursday" data-ru="Четверг" data-ar="الخميس">חמישי</div>
-            <div class="date-hours">15:30-20:30</div>
-          </article>
-
-          <article class="date-card reveal">
-            <div class="date-day">20</div>
-            <div class="date-month" data-he="אוגוסט 2026" data-en="August 2026" data-ru="Август 2026" data-ar="أغسطس 2026">אוגוסט 2026</div>
-            <div class="date-meta" data-he="חמישי" data-en="Thursday" data-ru="Четверг" data-ar="الخميس">חמישי</div>
-            <div class="date-hours">15:30-20:30</div>
-          </article>
-
-          <article class="date-card reveal">
+          <article class="date-card reveal" data-date="2026-08-27">
             <div class="date-day">27</div>
             <div class="date-month" data-he="אוגוסט 2026" data-en="August 2026" data-ru="Август 2026" data-ar="أغسطس 2026">אוגוסט 2026</div>
             <div class="date-meta" data-he="חמישי" data-en="Thursday" data-ru="Четверг" data-ar="الخميس">חמישי</div>
@@ -179,28 +165,28 @@
       <div class="dates-month">
         <h3 class="month-label" data-he="ספטמבר 2026" data-en="September 2026" data-ru="Сентябрь 2026" data-ar="سبتمبر 2026">ספטמבר 2026</h3>
         <div class="dates-grid">
-          <article class="date-card reveal">
+          <article class="date-card reveal" data-date="2026-09-03">
             <div class="date-day">03</div>
             <div class="date-month" data-he="ספטמבר 2026" data-en="September 2026" data-ru="Сентябрь 2026" data-ar="سبتمبر 2026">ספטמבר 2026</div>
             <div class="date-meta" data-he="חמישי" data-en="Thursday" data-ru="Четверг" data-ar="الخميس">חמישי</div>
             <div class="date-hours">15:30-20:30</div>
           </article>
 
-          <article class="date-card reveal">
+          <article class="date-card reveal" data-date="2026-09-10">
             <div class="date-day">10</div>
             <div class="date-month" data-he="ספטמבר 2026" data-en="September 2026" data-ru="Сентябрь 2026" data-ar="سبتمبر 2026">ספטמבר 2026</div>
             <div class="date-meta" data-he="חמישי" data-en="Thursday" data-ru="Четверг" data-ar="الخميس">חמישי</div>
             <div class="date-hours">15:30-20:30</div>
           </article>
 
-          <article class="date-card reveal">
+          <article class="date-card reveal" data-date="2026-09-17">
             <div class="date-day">17</div>
             <div class="date-month" data-he="ספטמבר 2026" data-en="September 2026" data-ru="Сентябрь 2026" data-ar="سبتمبر 2026">ספטמבר 2026</div>
             <div class="date-meta" data-he="חמישי" data-en="Thursday" data-ru="Четверг" data-ar="الخميس">חמישי</div>
             <div class="date-hours">15:30-20:30</div>
           </article>
 
-          <article class="date-card reveal">
+          <article class="date-card reveal" data-date="2026-09-24">
             <div class="date-day">24</div>
             <div class="date-month" data-he="ספטמבר 2026" data-en="September 2026" data-ru="Сентябрь 2026" data-ar="سبتمبر 2026">ספטמבר 2026</div>
             <div class="date-meta" data-he="חמישי" data-en="Thursday" data-ru="Четверг" data-ar="الخميس">חמישי</div>
@@ -303,8 +289,6 @@
           <span data-he="בחר תאריך" data-en="Choose a date" data-ru="Выберите дату" data-ar="اختر تاريخ">בחר תאריך</span> <span class="req">*</span>
           <select name="eventDate" required>
             <option value="" data-he=",, בחר תאריך ,," data-en=",, Choose date ,," data-ru=",, Выберите дату ,," data-ar=",, اختر تاريخ ,,">,, בחר תאריך ,,</option>
-            <option value="2026-08-06|אחה&quot;צ 15:30-20:30" data-he='06/08/2026 חמישי , אחה"צ 15:30-20:30' data-en="06/08/2026 Thursday , afternoon 15:30-20:30" data-ru="06/08/2026 Четверг , день 15:30-20:30" data-ar="06/08/2026 الخميس , بعد الظهر 15:30-20:30">06/08/2026 חמישי , אחה"צ 15:30-20:30</option>
-            <option value="2026-08-20|אחה&quot;צ 15:30-20:30" data-he='20/08/2026 חמישי , אחה"צ 15:30-20:30' data-en="20/08/2026 Thursday , afternoon 15:30-20:30" data-ru="20/08/2026 Четверг , день 15:30-20:30" data-ar="20/08/2026 الخميس , بعد الظهر 15:30-20:30">20/08/2026 חמישי , אחה"צ 15:30-20:30</option>
             <option value="2026-08-27|אחה&quot;צ 15:30-20:30" data-he='27/08/2026 חמישי , אחה"צ 15:30-20:30' data-en="27/08/2026 Thursday , afternoon 15:30-20:30" data-ru="27/08/2026 Четверг , день 15:30-20:30" data-ar="27/08/2026 الخميس , بعد الظهر 15:30-20:30">27/08/2026 חמישי , אחה"צ 15:30-20:30</option>
             <option value="2026-09-03|אחה&quot;צ 15:30-20:30" data-he='03/09/2026 חמישי , אחה"צ 15:30-20:30' data-en="03/09/2026 Thursday , afternoon 15:30-20:30" data-ru="03/09/2026 Четверг , день 15:30-20:30" data-ar="03/09/2026 الخميس , بعد الظهر 15:30-20:30">03/09/2026 חמישי , אחה"צ 15:30-20:30</option>
             <option value="2026-09-10|אחה&quot;צ 15:30-20:30" data-he='10/09/2026 חמישי , אחה"צ 15:30-20:30' data-en="10/09/2026 Thursday , afternoon 15:30-20:30" data-ru="10/09/2026 Четверг , день 15:30-20:30" data-ar="10/09/2026 الخميس , بعد الظهر 15:30-20:30">10/09/2026 חמישי , אחה"צ 15:30-20:30</option>
@@ -317,7 +301,6 @@
         <fieldset class="radio-group">
           <legend><span data-he="סוג הרכב" data-en="Car type" data-ru="Тип авто" data-ar="نوع السيارة">סוג הרכב</span> <span class="req">*</span></legend>
 
-          <p class="group-subhead" data-he="הרכב שלי" data-en="My own car" data-ru="Моя машина" data-ar="سيارتي">הרכב שלי</p>
           <label class="radio-tile">
             <input type="radio" name="carClass" value="regular" required checked>
             <div>
@@ -333,28 +316,6 @@
             </div>
           </label>
 
-          <p class="group-subhead" data-he="רכב של DKS" data-en="DKS car" data-ru="Машина DKS" data-ar="سيارة DKS">רכב של DKS</p>
-          <label class="radio-tile">
-            <input type="radio" name="carClass" value="mazda" required>
-            <div>
-              <strong data-he="מאזדה מיאטה (MX-5 NC)" data-en="Mazda Miata (MX-5 NC)" data-ru="Mazda Miata (MX-5 NC)" data-ar="مازدا مياتا (MX-5 NC)">מאזדה מיאטה (MX-5 NC)</strong>
-              <span data-he="900 ₪ . רכב של DKS" data-en="₪900 . DKS car" data-ru="₪900 . машина DKS" data-ar="₪900 . سيارة DKS">900 ₪ . רכב של DKS</span>
-            </div>
-          </label>
-          <label class="radio-tile">
-            <input type="radio" name="carClass" value="porsche" required>
-            <div>
-              <strong data-he="פורש 718-S" data-en="Porsche 718-S" data-ru="Porsche 718-S" data-ar="بورش 718-S">פורש 718-S</strong>
-              <span data-he="1,300 ₪ . רכב של DKS" data-en="₪1,300 . DKS car" data-ru="₪1,300 . машина DKS" data-ar="₪1,300 . سيارة DKS">1,300 ₪ . רכב של DKS</span>
-            </div>
-          </label>
-          <label class="radio-tile">
-            <input type="radio" name="carClass" value="m3" required>
-            <div>
-              <strong data-he="ב.מ.וו M3 COMPETITION" data-en="BMW M3 COMPETITION" data-ru="BMW M3 COMPETITION" data-ar="بي إم دبليو M3 COMPETITION">ב.מ.וו M3 COMPETITION</strong>
-              <span data-he="2,600 ₪ . רכב של DKS" data-en="₪2,600 . DKS car" data-ru="₪2,600 . машина DKS" data-ar="₪2,600 . سيارة DKS">2,600 ₪ . רכב של DKS</span>
-            </div>
-          </label>
         </fieldset>
 
         <fieldset class="radio-group">
@@ -363,7 +324,7 @@
             <input type="radio" name="racingLicense" value="yes" required>
             <div>
               <strong data-he="אני נוהג בעצמי" data-en="I'll drive myself" data-ru="Я буду ехать сам" data-ar="سأقود بنفسي">אני נוהג בעצמי</strong>
-              <span data-he="ברכב שלי או של DKS" data-en="My own car or a DKS car" data-ru="На своей машине или машине DKS" data-ar="بسيارتي أو بسيارة DKS">ברכב שלי או של DKS</span>
+              <span data-he="ברכב הפרטי שלי" data-en="In my own car" data-ru="На своей машине" data-ar="بسيارتي الخاصة">ברכב הפרטי שלי</span>
             </div>
           </label>
           <label class="radio-tile">
