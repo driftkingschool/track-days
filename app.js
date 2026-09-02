@@ -15,8 +15,8 @@ const RTL_LANGS = new Set(['he', 'ar']);
 const STORAGE_KEY = 'dks-trackdays-lang';
 
 const I18N_BREAKDOWN = {
-  carRegular: { he: 'רכב רגיל', en: 'Standard car', ru: 'Обычный авто', ar: 'سيارة عادية' },
-  carHighHP:  { he: 'רכב דריפט 300+ כ"ס', en: 'Drift car 300+ HP', ru: 'Дрифт-кар 300+ л.с.', ar: 'سيارة دريفت +300 حصان' },
+  carTrack: { he: 'כניסה ליום מסלול', en: 'Track day entry', ru: 'Вход на трек-день', ar: 'دخول يوم الحلبة' },
+  carPad:   { he: 'מגרש בלבד', en: 'Pad only', ru: 'Только площадка', ar: 'الساحة فقط' },
   addDriver:  { he: 'נהג נוסף', en: 'Additional driver', ru: 'Доп. водитель', ar: 'سائق إضافي' },
   helmet1:    { he: 'השכרת קסדה לנהג ראשי', en: 'Helmet rental (primary)', ru: 'Аренда шлема (осн.)', ar: 'استئجار خوذة (رئيسي)' },
   helmet2:    { he: 'השכרת קסדה לנהג נוסף', en: 'Helmet rental (additional)', ru: 'Аренда шлема (доп.)', ar: 'استئجار خوذة (إضافي)' }
@@ -183,7 +183,7 @@ const CONFIG = {
 
   pricing: {
     // Track days are private customer cars only (Paul, 03/08/26) , no DKS car rentals here.
-    base: { regular: 400, highHP: 500 },
+    base: { track: 500, pad: 350 },
     addons: { additionalDriver: 250, helmetRental: 50 },
     deposit: 50
   },
@@ -324,8 +324,8 @@ function collectFormData() {
 }
 
 const CAR_LABEL_KEY = {
-  regular: 'carRegular',
-  highHP:  'carHighHP'
+  track: 'carTrack',
+  pad:   'carPad'
 };
 
 function calculatePrice(d) {

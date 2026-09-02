@@ -211,15 +211,15 @@
     <p class="section-sub" data-he="הסכום הסופי תלוי בבחירות שלך בטופס. הנה מחירי הבסיס:" data-en="Final amount depends on your form selections. Here are the base prices:" data-ru="Итоговая сумма зависит от ваших выборов в форме. Вот базовые цены:" data-ar="المبلغ النهائي يعتمد على اختياراتك في النموذج. الأسعار الأساسية:">הסכום הסופי תלוי בבחירות שלך בטופס. הנה מחירי הבסיס:</p>
 
     <div class="pricing-grid">
-      <div class="price-card">
-        <div class="price-label" data-he="רכב רגיל" data-en="Standard car" data-ru="Обычный автомобиль" data-ar="سيارة عادية">רכב רגיל</div>
-        <div class="price-amount">400 ₪</div>
-        <div class="price-detail" data-he="לכל הרכבים מתחת ל-300 כוח סוס" data-en="For all cars under 300 horsepower" data-ru="Для всех авто с мощностью до 300 л.с." data-ar="لجميع السيارات أقل من 300 حصان">לכל הרכבים מתחת ל-300 כוח סוס</div>
-      </div>
       <div class="price-card highlighted">
-        <div class="price-label" data-he='רכב דריפט 300+ כ"ס' data-en="Drift car 300+ HP" data-ru="Дрифт-кар 300+ л.с." data-ar="سيارة دريفت +300 حصان">רכב דריפט 300+ כ"ס</div>
+        <div class="price-label" data-he="כניסה ליום מסלול" data-en="Track day entry" data-ru="Вход на трек-день" data-ar="دخول يوم الحلبة">כניסה ליום מסלול</div>
         <div class="price-amount">500 ₪</div>
-        <div class="price-detail" data-he="לרכבים עם 300 כוח סוס ומעלה" data-en="For cars with 300+ horsepower" data-ru="Для авто с мощностью 300+ л.с." data-ar="للسيارات بقوة 300 حصان فأكثر">לרכבים עם 300 כוח סוס ומעלה</div>
+        <div class="price-detail" data-he="מסלול + מגרש, לכל רכב, בלי הבדל כוח סוס" data-en="Track + pad, any car, no horsepower tiers" data-ru="Трасса + площадка, любое авто, без разделения по мощности" data-ar="حلبة + ساحة، لأي سيارة، بدون فرق في القوة الحصانية">מסלול + מגרש, לכל רכב, בלי הבדל כוח סוס</div>
+      </div>
+      <div class="price-card">
+        <div class="price-label" data-he="מגרש בלבד" data-en="Pad only" data-ru="Только площадка" data-ar="الساحة فقط">מגרש בלבד</div>
+        <div class="price-amount">350 ₪</div>
+        <div class="price-detail" data-he="יום מסלול על המגרש בלבד, בלי המסלול" data-en="Track day on the pad only, no circuit" data-ru="Трек-день только на площадке, без трассы" data-ar="يوم على الساحة فقط، بدون الحلبة">יום מסלול על המגרש בלבד, בלי המסלול</div>
       </div>
       <div class="price-card">
         <div class="price-label" data-he="נהג נוסף באותו רכב" data-en="Additional driver, same car" data-ru="Доп. водитель в той же машине" data-ar="سائق إضافي في نفس السيارة">נהג נוסף באותו רכב</div>
@@ -304,20 +304,20 @@
         </label>
 
         <fieldset class="radio-group">
-          <legend><span data-he="סוג הרכב" data-en="Car type" data-ru="Тип авто" data-ar="نوع السيارة">סוג הרכב</span> <span class="req">*</span></legend>
+          <legend><span data-he="סוג הכניסה" data-en="Entry type" data-ru="Тип входа" data-ar="نوع الدخول">סוג הכניסה</span> <span class="req">*</span></legend>
 
           <label class="radio-tile">
-            <input type="radio" name="carClass" value="regular" required checked>
+            <input type="radio" name="carClass" value="track" required checked>
             <div>
-              <strong data-he="רכב רגיל" data-en="Standard car" data-ru="Обычный авто" data-ar="سيارة عادية">רכב רגיל</strong>
-              <span data-he="400 ₪ . עד 300 כוח סוס" data-en="₪400 . up to 300 HP" data-ru="₪400 . до 300 л.с." data-ar="₪400 . حتى 300 حصان">400 ₪ . עד 300 כוח סוס</span>
+              <strong data-he="כניסה ליום מסלול" data-en="Track day entry" data-ru="Вход на трек-день" data-ar="دخول يوم الحلبة">כניסה ליום מסלול</strong>
+              <span data-he="500 ₪ . מסלול + מגרש, לכל רכב" data-en="₪500 . track + pad, any car" data-ru="₪500 . трасса + площадка, любое авто" data-ar="₪500 . حلبة + ساحة، لأي سيارة">500 ₪ . מסלול + מגרש, לכל רכב</span>
             </div>
           </label>
           <label class="radio-tile">
-            <input type="radio" name="carClass" value="highHP" required>
+            <input type="radio" name="carClass" value="pad" required>
             <div>
-              <strong data-he='רכב דריפט 300+ כ"ס' data-en="Drift car 300+ HP" data-ru="Дрифт-кар 300+ л.с." data-ar="سيارة دريفت +300 حصان">רכב דריפט 300+ כ"ס</strong>
-              <span data-he="500 ₪ . מ-300 כוח סוס ומעלה" data-en="₪500 . from 300 HP and up" data-ru="₪500 . от 300 л.с." data-ar="₪500 . من 300 حصان فأكثر">500 ₪ . מ-300 כוח סוס ומעלה</span>
+              <strong data-he="מגרש בלבד" data-en="Pad only" data-ru="Только площадка" data-ar="الساحة فقط">מגרש בלבד</strong>
+              <span data-he="350 ₪ . יום מסלול על המגרש, בלי המסלול" data-en="₪350 . pad only, no circuit" data-ru="₪350 . только площадка, без трассы" data-ar="₪350 . الساحة فقط، بدون الحلبة">350 ₪ . יום מסלול על המגרש, בלי המסלול</span>
             </div>
           </label>
 
@@ -421,7 +421,7 @@
             <input type="radio" name="paymentOption" value="full" required>
             <div>
               <strong data-he="תשלום מלא עכשיו" data-en="Pay in full now" data-ru="Полная оплата сейчас" data-ar="دفع كامل الآن">תשלום מלא עכשיו</strong>
-              <span data-he-prefix="הסכום המלא לפי הבחירות שלך , " data-en-prefix="Full amount based on your selections , " data-ru-prefix="Полная сумма по вашим выборам , " data-ar-prefix="المبلغ الكامل وفقاً لاختياراتك , "><span class="pay-prefix" data-he="הסכום המלא לפי הבחירות שלך , " data-en="Full amount based on selections , " data-ru="Полная сумма по выбору , " data-ar="المبلغ الكامل وفقاً للاختيار , ">הסכום המלא לפי הבחירות שלך , </span><span id="full-price-display">400 ₪</span></span>
+              <span data-he-prefix="הסכום המלא לפי הבחירות שלך , " data-en-prefix="Full amount based on your selections , " data-ru-prefix="Полная сумма по вашим выборам , " data-ar-prefix="المبلغ الكامل وفقاً لاختياراتك , "><span class="pay-prefix" data-he="הסכום המלא לפי הבחירות שלך , " data-en="Full amount based on selections , " data-ru="Полная сумма по выбору , " data-ar="المبلغ الكامل وفقاً للاختيار , ">הסכום המלא לפי הבחירות שלך , </span><span id="full-price-display">500 ₪</span></span>
             </div>
           </label>
           <label class="radio-tile payment-tile">
@@ -445,7 +445,7 @@
           <div class="totals">
             <div class="row total-row">
               <span data-he='סה"כ:' data-en="Total:" data-ru="Итого:" data-ar="المجموع:">סה"כ:</span>
-              <strong id="total-price">400 ₪</strong>
+              <strong id="total-price">500 ₪</strong>
             </div>
             <div class="row pay-now-row">
               <span data-he="לתשלום עכשיו:" data-en="Pay now:" data-ru="К оплате сейчас:" data-ar="الدفع الآن:">לתשלום עכשיו:</span>
@@ -477,7 +477,7 @@
 
     <details>
       <summary data-he="האם הרכב שלי מתאים?" data-en="Is my car suitable?" data-ru="Подходит ли моя машина?" data-ar="هل سيارتي مناسبة؟">האם הרכב שלי מתאים?</summary>
-      <p data-he="כל רכב פרטי במצב טכני תקין מתאים. לרכבי דריפט מ-300 כוח סוס ומעלה יש תוספת מחיר 500 ₪ במקום 400 ₪. ערב לפני האירוע נוודא איתך פרטי הרכב." data-en="Any private car in good technical condition is suitable. Drift cars over 300 HP have a price of ₪500 instead of ₪400. We'll confirm vehicle details with you the night before." data-ru="Любой частный авто в технически исправном состоянии подходит. Дрифт-кары от 300 л.с. , ₪500 вместо ₪400. Накануне мы подтвердим детали авто." data-ar="أي سيارة خاصة بحالة فنية جيدة مناسبة. سيارات الدريفت بقوة 300 حصان فأكثر بسعر ₪500 بدل ₪400. سنؤكد تفاصيل السيارة معك ليلة الفعالية.">כל רכב פרטי במצב טכני תקין מתאים. לרכבי דריפט מ-300 כוח סוס ומעלה יש תוספת מחיר 500 ₪ במקום 400 ₪. ערב לפני האירוע נוודא איתך פרטי הרכב.</p>
+      <p data-he="כל רכב פרטי במצב טכני תקין מתאים, בלי הבדל כוח סוס: כניסה ליום מסלול 500 ₪ (מסלול + מגרש), או מגרש בלבד 350 ₪. ערב לפני האירוע נוודא איתך פרטי הרכב." data-en="Any private car in good technical condition is suitable, no horsepower tiers: track day entry ₪500 (track + pad), or pad only ₪350. We will confirm your car details the evening before." data-ru="Подходит любое частное авто в исправном состоянии, без разделения по мощности: вход на трек-день ₪500 (трасса + площадка) или только площадка ₪350. Накануне вечером уточним детали авто." data-ar="أي سيارة خاصة بحالة فنية جيدة مناسبة، بدون فرق في القوة الحصانية: دخول يوم الحلبة ₪500 (حلبة + ساحة) أو الساحة فقط ₪350. سنؤكد تفاصيل سيارتك مساء اليوم السابق.">כל רכב פרטי במצב טכני תקין מתאים, בלי הבדל כוח סוס: כניסה ליום מסלול 500 ₪ (מסלול + מגרש), או מגרש בלבד 350 ₪. ערב לפני האירוע נוודא איתך פרטי הרכב.</p>
     </details>
 
     <details>
